@@ -16,6 +16,10 @@
 | **IRC** | [`irc://irc.w3.org:6665/rdfjs`](irc://irc.w3.org:6665/rdfjs)
 | **IRC web** | http://irc.w3.org/?channels=rdfjs
 
+More Links:
+
+* https://text.allmende.io/p/rdfjs
+
 
 ## rdfjs.github.io
 | Predicate | Object |
