@@ -1,5 +1,5 @@
 
-# RDF JavaScript Libraries Community Group
+# W3C RDFJS RDF JavaScript Libraries Community Group
 
 **Description**: The RDF JavaScript Libraries Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript platforms like Web browsers and Node.js.
 
