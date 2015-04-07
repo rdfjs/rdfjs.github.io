@@ -1,7 +1,7 @@
 
-# W3C RDFJS RDF JavaScript Libraries Community Group
+# W3C RDFJS Community Group
 
-**Description**: The RDF JavaScript Libraries Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript platforms like Web browsers and Node.js.
+**Description**: The W3C RDFJS RDF JavaScript Libraries Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript platforms like Web browsers and Node.js.
 
 | Predicate | Object |
 |-----------|--------|
@@ -15,6 +15,7 @@
 | **GitHub web src** | https://github.com/rdfjs/rdfjs.github.io
 | **IRC** | [`irc://irc.w3.org:6665/rdfjs`](irc://irc.w3.org:6665/rdfjs)
 | **IRC web** | http://irc.w3.org/?channels=rdfjs
+
 
 ## rdfjs.github.io
 | Predicate | Object |
