@@ -1,19 +1,23 @@
-# rdfjs.github.io
-RDFJS.github.io
 
-RDF JavaScript Libraries Community Group
+# RDF JavaScript Libraries Community Group
 
-The RDF JavaScript Libraries Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript platforms like Web browsers and Node.js.
+**Description**: The RDF JavaScript Libraries Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript platforms like Web browsers and Node.js.
 
+| Predicate | Object |
+|-----------|--------|
+| **Homepage** | https://www.w3.org/community/rdfjs/
+| **Homepage RSS** | https://www.w3.org/community/rdfjs/feed/
+| **Wiki** | https://www.w3.org/community/rdfjs/wiki/
+| **Mailing List** | public-rdfjs@w3.org
+| **Mailing List archive** | https://lists.w3.org/Archives/Public/public-rdfjs/
+| **GitHub** | https://github.com/rdfjs
+| **GitHub web** | https://rdfjs.github.io/
+| **GitHub web src** | https://github.com/rdfjs/rdfjs.github.io
+| **IRC** | [`irc://irc.w3.org:6665/rdfjs`](irc://irc.w3.org:6665/rdfjs)
+| **IRC web** | http://irc.w3.org/?channels=rdfjs
 
-**Homepage**: http://www.w3.org/community/rdfjs/
-
-**Wiki**: http://www.w3.org/community/rdfjs/wiki/
-
-**List**: mailto:public-rdfjs@w3.org
-
-**Web archive**: http://lists.w3.org/Archives/Public/public-rdfjs/
-
-
-**IRC**: irc://irc.w3.org:6665/rdfjs
-**IRC web**: http://irc.w3.org/?channels=rdfjs
+## rdfjs.github.io
+| Predicate | Object |
+|-----------|--------|
+| **GitHub web** | https://rdfjs.github.io
+| **GitHub web src** | https://github.com/rdfjs/rdfjs.github.io
