@@ -18,7 +18,7 @@
 
 More Links:
 
-* https://text.allmende.io/p/rdfjs
+* https://github.com/rdfjs/rdfjs.org/wiki/Meetings
 
 
 ## rdfjs.org
