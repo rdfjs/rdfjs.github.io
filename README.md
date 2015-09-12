@@ -11,8 +11,8 @@
 | **Mailing List** | public-rdfjs@w3.org
 | **Mailing List archive** | https://lists.w3.org/Archives/Public/public-rdfjs/
 | **GitHub** | https://github.com/rdfjs
-| **GitHub web** | https://rdfjs.github.io/
-| **GitHub web src** | https://github.com/rdfjs/rdfjs.github.io
+| **GitHub web** | https://rdfjs.org/
+| **GitHub web src** | https://github.com/rdfjs/rdfjs.org
 | **IRC** | [`irc://irc.w3.org:6665/rdfjs`](irc://irc.w3.org:6665/rdfjs)
 | **IRC web** | http://irc.w3.org/?channels=rdfjs
 
@@ -21,8 +21,8 @@ More Links:
 * https://text.allmende.io/p/rdfjs
 
 
-## rdfjs.github.io
+## rdfjs.org
 | Predicate | Object |
 |-----------|--------|
-| **GitHub web** | https://rdfjs.github.io
-| **GitHub web src** | https://github.com/rdfjs/rdfjs.github.io
+| **GitHub web** | https://rdfjs.org
+| **GitHub web src** | https://github.com/rdfjs/rdfjs.org
