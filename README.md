@@ -12,5 +12,5 @@
 | **Wiki** | https://github.com/rdfjs/rdfjs.org/wiki
 | **GitHub** | https://github.com/rdfjs
 | **W3C Community** | https://www.w3.org/community/rdfjs/
-
+| | |
 | **Legacy Wiki** | https://www.w3.org/community/rdfjs/wiki/
