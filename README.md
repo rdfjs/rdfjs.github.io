@@ -1,9 +1,8 @@
 
 # W3C RDFJS Community Group
+**Description**: The W3C RDFJS (RDF/JavaScript) Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript (JavaScript) platforms like Web browsers and Node.js.
 
 **Current activities**: [Representation Taskforce](https://github.com/rdfjs/representation-task-force) works on a common low-level API proposition for RDFJS libraries.
-
-**Description**: The W3C RDFJS (RDF/JavaScript) Community Group discusses implementations of libraries for working with RDF and Linked Data in ECMAScript (JavaScript) platforms like Web browsers and Node.js.
 
 | Predicate | Object |
 |-----------|--------|
