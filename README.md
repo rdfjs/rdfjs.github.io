@@ -6,11 +6,12 @@
 
 | Predicate | Object |
 |-----------|--------|
-| **Website** | http://rdfjs.org/
-| **Wiki** | https://github.com/rdfjs/rdfjs.org/wiki
-| **GitHub** | https://github.com/rdfjs
-| **Chat** |https://gitter.im/rdfjs/public
 | **W3C Community** | https://www.w3.org/community/rdfjs/
+| **GitHub** | https://github.com/rdfjs
+| **Wiki** | https://github.com/rdfjs/rdfjs.org/wiki
+| **Wiki** | https://github.com/rdfjs/representation-task-force/wiki
+| **Chat** |https://gitter.im/rdfjs/public
 | **Mailing List** | public-rdfjs@w3.org
 | **Mailing List archive** | https://lists.w3.org/Archives/Public/public-rdfjs/
+| **RDFJS Representation Taskforce** | https://github.com/rdfjs/representation-task-force
 
