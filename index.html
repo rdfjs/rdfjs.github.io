@@ -14,7 +14,14 @@
   <script id="content" type="application/ld+json">
     {
       "@context": {
-        "@vocab": "http://schema.org/"
+        "@vocab": "http://schema.org/",
+        "doap": "http://usefulinc.com/ns/doap#",
+        "implements": { "@id": "doap:implements", "@type": "@id" },
+        "DataFactory": { "@id": "http://rdf.js.org/data-model-spec/#datafactory-interface", "@type": "@id" },
+        "Source": { "@id": "http://rdf.js.org/stream-spec/#source-interface", "@type": "@id" },
+        "Sink": { "@id": "http://rdf.js.org/stream-spec/#sink-interface", "@type": "@id" },
+        "Store": { "@id": "http://rdf.js.org/stream-spec/#store-interface", "@type": "@id" },
+        "Dataset": { "@id": "http://rdf.js.org/dataset-spec/#dataset-interface", "@type": "@id" }
       },
       "@type": "WebPage",
       "breadcrumb": [{
@@ -37,7 +44,28 @@
         "breadcrumb": []
       }, {
         "@id": "#libraries",
-        "breadcrumb": []
+        "breadcrumb": [{
+          "@id": "/data-model/",
+          "name": "@rdfjs/data-model",
+          "description": "Basic implementation of RDFJS Data Model.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "/dataset/",
+          "name": "@rdfjs/dataset",
+          "description": "Basic implementation of RDFJS Dataset.",
+          "implements": [ "Dataset" ]
+        }, {
+          "@id": "/N3.js/",
+          "name": "n3",
+          "description": "Lightning fast, spec-compatible, streaming RDF for JavaScript.",
+          "implements": [ "DataFactory", "Store", "Sink" ]
+        }, {
+          "@id": "https://github.com/beautifulinteractions/node-quadstore",
+          "name": "node-quadstore",
+          "description": "A LevelDB-backed graph database for Node.js and the browser supporting SPARQL queries and the RDF/JS interface.",
+          "implements": [ "Store" ]
+        }
+        ]
       }]
     }
   </script>
@@ -45,6 +73,15 @@
   <style>
     h1, h2 {
       text-align: center;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    .card {
+      margin-bottom: 1em;
+    }
+    .interface {
+      font-size: 0.8em;
     }
   </style>
 
@@ -120,6 +157,9 @@
               <div class="card-body">
                 <h5 class="card-title"><a :href="library['@id']">{{ library.name }}</a></h5>
                 <p class="card-text">{{ library.description }}</p>
+                <span class="interface" v-for="interface in library['implements']">
+                  {{ interface }}
+                </span>
               </div>
             </div>
           </div>
