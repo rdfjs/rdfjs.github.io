@@ -14,7 +14,14 @@
   <script id="content" type="application/ld+json">
     {
       "@context": {
-        "@vocab": "http://schema.org/"
+        "@vocab": "http://schema.org/",
+        "doap": "http://usefulinc.com/ns/doap#",
+        "implements": { "@id": "doap:implements", "@type": "@id" },
+        "DataFactory": { "@id": "http://rdf.js.org/data-model-spec/#datafactory-interface", "@type": "@id" },
+        "Source": { "@id": "http://rdf.js.org/stream-spec/#source-interface", "@type": "@id" },
+        "Sink": { "@id": "http://rdf.js.org/stream-spec/#sink-interface", "@type": "@id" },
+        "Store": { "@id": "http://rdf.js.org/stream-spec/#store-interface", "@type": "@id" },
+        "Dataset": { "@id": "http://rdf.js.org/dataset-spec/#dataset-interface", "@type": "@id" }
       },
       "@type": "WebPage",
       "breadcrumb": [{
@@ -37,7 +44,108 @@
         "breadcrumb": []
       }, {
         "@id": "#libraries",
-        "breadcrumb": []
+        "breadcrumb": [{
+          "@id": "/data-model/",
+          "name": "@rdfjs/data-model",
+          "description": "Basic implementation of RDFJS Data Model.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "/dataset/",
+          "name": "@rdfjs/dataset",
+          "description": "Basic implementation of RDFJS Dataset.",
+          "implements": [ "Dataset" ]
+        }, {
+          "@id": "/N3.js/",
+          "name": "n3",
+          "description": "Lightning fast, spec-compatible, streaming RDF for JavaScript.",
+          "implements": [ "DataFactory", "Sink" ]
+        }, {
+          "@id": "https://github.com/beautifulinteractions/node-quadstore",
+          "name": "node-quadstore",
+          "description": "A LevelDB-backed graph database for Node.js and the browser supporting SPARQL queries and the RDF/JS interface.",
+          "implements": [ "Store" ]
+        }, {
+          "@id": "https://github.com/blake-regalia/graphy.js",
+          "name": "graphy",
+          "description": "A collection of RDF libraries for JavaScript developers with a focus on performance and usability.",
+          "implements": [ "DataFactory", "Dataset", "Source", "Sink" ]
+        }, {
+          "@id": "https://github.com/comunica/comunica",
+          "name": "Comunica",
+          "description": "Comunica is a highly modular and flexible meta query engine for the Web.",
+          "implements": [ "DataFactory", "Source" ]
+        }, {
+          "@id": "https://github.com/rubensworks/jsonld-streaming-parser.js",
+          "name": "JSON-LD Streaming parser",
+          "description": "A fast and lightweight streaming JSON-LD parser for JavaScript.",
+          "implements": [ "DataFactory", "Sink" ]
+        }, {
+          "@id": "https://github.com/rubensworks/rdfxml-streaming-parser.js",
+          "name": "RDF/XML Streaming parser",
+          "description": "A highly efficient streaming RDF/XML parser.",
+          "implements": [ "DataFactory", "Sink" ]
+        }, {
+          "@id": "https://github.com/rubensworks/jsonld-context-parser.js",
+          "name": "JSON-LD context parser",
+          "description": "A generic JSON-LD context parser.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/rdf-test-suite.js",
+          "name": "RDF Test Suite",
+          "description": "Executes the RDF and SPARQL test suites.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/rdf-isomorphic.js",
+          "name": "RDF Isomorphic",
+          "description": "Determines if two RDF graphs are isomorphic.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/graphql-to-sparql.js",
+          "name": "GraphQL to SPARQL",
+          "description": "Converts GraphQL queries to SPARQL queries.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/jest-rdf",
+          "name": "Jest RDF",
+          "description": "Jest utilities for RDF(JS)",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/rdf-object.js",
+          "name": "RDF Object",
+          "description": "Loads RDF as JSON objects.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/RubenVerborgh/LDflex",
+          "name": "LDflex",
+          "description": "A JavaScript DSL for querying Linked Data on the Web",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/fetch-sparql-endpoint.js",
+          "name": "Fetch SPARQL endpoint",
+          "description": "A simple, lightweight module to send queries to SPARQL endpoints and retrieve their results in a streaming fashion.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/sparqlxml-parse.js",
+          "name": "SPARQL/XML Parser",
+          "description": "Parses SPARQL XML query results.",
+          "implements": [  "DataFactory", "Sink" ]
+        }, {
+          "@id": "https://github.com/rubensworks/sparqljson-parse.js",
+          "name": "SPARQL/JSON Parser",
+          "description": "Parses SPARQL JSON query results.",
+          "implements": [  "DataFactory", "Sink" ]
+        }, {
+          "@id": "https://github.com/rubensworks/rdf-quad.js",
+          "name": "RDF Quad",
+          "description": "A convenience constructor for RDF quads.",
+          "implements": [ "DataFactory" ]
+        }, {
+          "@id": "https://github.com/rubensworks/rdf-string.js  ",
+          "name": "RDF String",
+          "description": "Convenience functions for creating and serializing RDF terms and quads.",
+          "implements": [ "DataFactory" ]
+        }
+        ]
       }]
     }
   </script>
@@ -45,6 +153,15 @@
   <style>
     h1, h2 {
       text-align: center;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    .card {
+      margin-bottom: 1em;
+    }
+    .interface {
+      font-size: 0.8em;
     }
   </style>
 
@@ -120,6 +237,9 @@
               <div class="card-body">
                 <h5 class="card-title"><a :href="library['@id']">{{ library.name }}</a></h5>
                 <p class="card-text">{{ library.description }}</p>
+                <span class="interface" v-for="interface in library['implements']">
+                  {{ interface }}
+                </span>
               </div>
             </div>
           </div>
