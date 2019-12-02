@@ -1,10 +1,4 @@
----
-name: "➕ Add library MYLIB"
-about: Suggest an entry to the list of libraries
-
----
-
-<!--Thanks for your PR! Please fill in the following template and fill in your library name in the PR title.-->
+<!--Thanks for your PR! If you want to add a library to the website, please fill in the following template and fill in your library name in the PR title.-->
 
 To improve the usability of RDFJS tools,
 we recommend all listed libraries to have the following elements in their documentation (README or linked).
