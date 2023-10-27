@@ -17,11 +17,14 @@
         "@vocab": "http://schema.org/",
         "doap": "http://usefulinc.com/ns/doap#",
         "implements": { "@id": "doap:implements", "@type": "@id" },
-        "DataFactory": { "@id": "http://rdf.js.org/data-model-spec/#datafactory-interface", "@type": "@id" },
-        "Source": { "@id": "http://rdf.js.org/stream-spec/#source-interface", "@type": "@id" },
-        "Sink": { "@id": "http://rdf.js.org/stream-spec/#sink-interface", "@type": "@id" },
-        "Store": { "@id": "http://rdf.js.org/stream-spec/#store-interface", "@type": "@id" },
-        "Dataset": { "@id": "http://rdf.js.org/dataset-spec/#dataset-interface", "@type": "@id" }
+        "DataFactory": { "@id": "https://rdf.js.org/data-model-spec/#datafactory-interface", "@type": "@id" },
+        "Dataset": { "@id": "https://rdf.js.org/dataset-spec/#dataset-interface", "@type": "@id" },
+        "DatasetCore": { "@id": "https://rdf.js.org/dataset-spec/#datasetcore-interface", "@type": "@id" },
+        "DatasetCoreFactory": { "@id": "https://rdf.js.org/dataset-spec/#datasetcorefactory-interface", "@type": "@id" },
+        "Sink": { "@id": "https://rdf.js.org/stream-spec/#sink-interface", "@type": "@id" },
+        "Source": { "@id": "https://rdf.js.org/stream-spec/#source-interface", "@type": "@id" },
+        "Store": { "@id": "https://rdf.js.org/stream-spec/#store-interface", "@type": "@id" },
+        "Stream": { "@id": "https://rdf.js.org/stream-spec/#stream-interface", "@type": "@id" }
       },
       "@type": "WebPage",
       "breadcrumb": [{
@@ -57,7 +60,7 @@
           "@id": "https://github.com/rdfjs-base/dataset",
           "name": "@rdfjs/dataset",
           "description": "Basic implementation of RDFJS Dataset.",
-          "implements": [ "Dataset" ]
+          "implements": [ "DatasetCore", "DatasetCoreFactory" ]
         }, {
           "@id": "/N3.js/",
           "name": "n3",
@@ -258,6 +261,187 @@
           "name": "express-middleware-shacl",
           "description": "Express middleware for validating RDF payloads with SHACL",
           "implements": [ ]
+        }, {
+          "@id": "https://github.com/rdf-ext/grapoi",
+          "name": "grapoi",
+          "description": "Grapoi is a JavaScript graph traversal library inspired by Gremlin. It allows querying RDF/JS Datasets readable and intuitive way. Grapoi makes processing RDF data in JavaScript fun again.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdf-ext/housemd",
+          "name": "housemd",
+          "description": "Contains an RDF dataset about people, places, and events of the TV series House.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdf-ext/rdf-ext",
+          "name": "rdf-ext",
+          "description": "RDF-Ext is a JavaScript library that extends the RDF/JS specs to handle RDF data in a developer-friendly way.",
+          "implements": [
+            "DataFactory",
+            "DatasetCoreFactory",
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdf-ext/rdf-sparql-builder",
+          "name": "rdf-sparql-builder",
+          "description": "rdf-sparql-builder helps building SPARQL queries in JavaScript code. Instead of error-prone string concatenations, method chaining allows writing queries without switching the programming language. The RDF/JS data model is used for terms like named nodes and variables.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdf-ext/shacl-engine",
+          "name": "shacl-engine",
+          "description": "A fast SHACL engine for data provided as RDF/JS objects.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/environment",
+          "name": "@rdfjs/environment",
+          "description": "This package provides a flexible RDF/JS factory. The Environment class takes one or more RDF/JS factory classes and creates a new, merged instance. All factory methods will use the Environment instance as factory to create new object instances. Clones can be created to manipulate an instance isolated from other instances.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/express-handler",
+          "name": "@rdfjs/express-handler",
+          "description": "The @rdfjs/express-handler middleware provides methods to parse incoming RDF data from request with content like POST or PUT requests. It also provides methods to serialize outgoing RDF data.",
+          "implements": [
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/fetch",
+          "name": "@rdfjs/fetch",
+          "description": "Wrapper for fetch to simplify sending and retrieving RDF data.",
+          "implements": [
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/fetch-lite",
+          "name": "@rdfjs/fetch-lite",
+          "description": "Wrapper for fetch to simplify sending and retrieving RDF data. This is a light version of the @rdfjs/fetch package, without the @rdfjs/formats-common dependency. It is useful when you want to make a build for the browser with a reduced set of parsers and serializers.",
+          "implements": [
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/formats-common",
+          "name": "@rdfjs/formats-common",
+          "description": "This module bundles parsers and serializers for the most common RDF formats. Instances of SinkMap are used to handle different media types.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/namespace",
+          "name": "@rdfjs/namespace",
+          "description": "Named Node builder.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/normalize",
+          "name": "@rdfjs/normalize",
+          "description": "RDF Dataset Normalization as described in the spec from the Credentials W3C community group. Subtitle is \"A Standard RDF Dataset Normalization Algorithm\".",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/parser-jsonld",
+          "name": "@rdfjs/parser-jsonld",
+          "description": "JSON-LD parser that implements the RDF/JS Sink interface using jsonld-streaming-parser.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/parser-n3",
+          "name": "@rdfjs/parser-n3",
+          "description": "N3 parser which implements the RDF/JS Sink interface using the N3.js library.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/prefix-map",
+          "name": "@rdfjs/prefix-map",
+          "description": "A Map for RDF/JS prefixes. This package implements the JavaScript Map interface for RDF prefixes. Key-Value pairs are stored with the prefix as the key as a string and the namespaces as the value in an RDF/JS NamedNode object. There are some additional convenience methods to handle CURIEs and prefix events of RDF/JS Quad streams.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/score",
+          "name": "@rdfjs/score",
+          "description": "Scores RDF/JS terms inside a dataset",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/serializer-jsonld",
+          "name": "@rdfjs/serializer-jsonld",
+          "description": "JSON-LD serializer that implements the RDF/JS Sink interface.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/serializer-jsonld-ext",
+          "name": "@rdfjs/serializer-jsonld-ext",
+          "description": "JSON-LD serializer that implements the RDF/JS Sink interface and supports different output styles. This package handles the stream processing and uses jsonld.js for the actual serialization process.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/serializer-ntriples",
+          "name": "@rdfjs/serializer-ntriples",
+          "description": "N-Triples serializer that implements the RDF/JS Sink interface.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/serializer-rdfjs",
+          "name": "@rdfjs/serializer-rdfjs",
+          "description": "RDF/JS JavaScript code serializer that implements the RDF/JS Sink interface. It serializes the given quads to a JavaScript module that exports a single function. The created function will return an array of the re-created quads.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/serializer-turtle",
+          "name": "@rdfjs/serializer-turtle",
+          "description": "A Turtle serializer that implements the RDF/JS Sink interface. It serializes the given quads to a pretty-printed Turtle string.",
+          "implements": [
+            "Sink",
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/sink",
+          "name": "@rdfjs/sink",
+          "description": "Abstract RDF/JS Sink interface implementation.",
+          "implements": [
+            "Sink"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/sink-map",
+          "name": "@rdfjs/sink-map",
+          "description": "Map for RDF/JS Sink including shortcut methods.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/sink-to-duplex",
+          "name": "@rdfjs/sink-to-duplex",
+          "description": "Creates a duplex wrapper for RDF/JS Sink. With the duplex wrapper it's possible to use a RDF/JS Sink like a Node.js duplex stream with a Readable and Writable interface.",
+          "implements": [
+            "Stream"
+          ]
+        }, {
+          "@id": "https://github.com/rdfjs-base/term-map",
+          "name": "@rdfjs/term-map",
+          "description": "A Map for RDF/JS Terms keys. This package implements the JavaScript Map interface exclusively for RDF/JS Terms keys and treats Terms with the same N-Triples representation as they are the same object.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/term-set",
+          "name": "@rdfjs/term-set",
+          "description": "A Set for RDF/JS Terms. This package implements the JavaScript Set interface exclusively for RDF/JS Terms and treats Terms with the same N-Triples representation as they are the same object.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/to-ntriples",
+          "name": "@rdfjs/to-ntriples",
+          "description": "Converts RDF/JS Terms, Quads and Datasets to N-Triple strings.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/traverser",
+          "name": "@rdfjs/traverser",
+          "description": "This package provides a generic traverser for RDF/JS Datasets.",
+          "implements": []
+        }, {
+          "@id": "https://github.com/rdfjs-base/tree",
+          "name": "@rdfjs/tree",
+          "description": "A tree structure for a set of RDF/JS Quads.",
+          "implements": []
         }
         ]
       }]
