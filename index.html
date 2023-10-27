@@ -346,7 +346,30 @@
         <h2>Libraries</h2>
 
         <div class="row">
-          <div class="col-md-4" v-for="library in libraries">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="librariesSort">Sort</label>
+              <select class="form-control" id="librariesSort" v-model="librariesSort" @change="updateLibraries">
+                <option value=""></option>
+                <option value="asc">A-Z</option>
+                <option value="desc">Z-A</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="librariesFilter">Interface</label>
+              <select class="form-control" id="librariesFilter" v-model="librariesFilter" @change="updateLibraries">
+                <option value=""></option>
+                <option v-for="interface of interfaces" :value="interface">{{ interface }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4" v-for="library in libraryList">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title"><a :href="library['@id']">{{ library.name }}</a></h5>
@@ -363,22 +386,49 @@
   </div>
 
   <script>
+    let libraryList = []
+    let librariesSort = ''
+    let librariesFilter = ''
+
     const content = JSON.parse(document.getElementById('content').innerText)
 
     const { specifications, documentations, libraries } = content.breadcrumb.reduce((list, item) => {
-      list[item['@id'].substr(1)] = item.breadcrumb
+      list[item['@id'].slice(1)] = item.breadcrumb
 
       return list
     }, {})
 
-    new Vue({
+    const interfaces = [...new Set(libraries.flatMap(library => library.implements))].sort()
+
+    const app = new Vue({
       el: '#app',
       data: {
         specifications,
         documentations,
-        libraries
+        libraries,
+        libraryList
       }
     })
+
+    function updateLibraries () {
+      libraryList = libraries.slice()
+
+      if (librariesFilter) {
+        libraryList = libraryList.filter(library => library.implements.includes(librariesFilter))
+      }
+
+      if (librariesSort === 'asc') {
+        libraryList = libraryList.sort((a, b) => a.name.localeCompare(b.name))
+      }
+
+      if (librariesSort === 'desc') {
+        libraryList = libraryList.sort((a, b) => b.name.localeCompare(a.name))
+      }
+
+      app.libraryList = libraryList
+    }
+
+    updateLibraries()
   </script>
 </body>
 </html>
